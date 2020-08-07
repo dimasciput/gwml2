@@ -11,7 +11,7 @@
     {% include "groundwater_form/_many-to-many.html" with id='screen' title='Screen' theform=screen %}
     {% include "groundwater_form/_many-to-many.html" with id='water_strike' title='Water Strike' theform=water_strike %}
     <div class="section">
-        <h4>Pump (Well Production)</h4>
+        <h4>Pump (for production wells)</h4>
         <table>
             {% field_as_row form.pump_installer %}
             {% field_as_row form.pump_details %}

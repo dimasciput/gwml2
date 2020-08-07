@@ -12,14 +12,14 @@
                 <td><h4>Identification</h4></td>
             </tr>
             {% field_as_row form.id %}
-            {% field_as_row form.water_point_reference %}
-            {% field_as_row form.water_point_type %}
+            {% field_as_row form.name %}
+            {% field_as_row form.feature_type %}
             <tr>
                 <td><h4>Location Information</h4></td>
             </tr>
             {% field_as_row form.latitude '°' %}
             {% field_as_row form.longitude '°' %}
-            {% field_as_row form.elevation 'm.o.a.d.' %}
+            {% field_as_row form.elevation 'a.s.l.' %}
             {% field_as_row form.country %}
             {% field_as_row form.address %}
         </table>
@@ -32,8 +32,8 @@
                 <td><h4>Summary Information</h4></td>
             </tr>
             <tr>
-                <td>{{ form.picture.label }}</td>
-                <td>{{ form.picture }}</td>
+                <td>{{ form.photo.label }}</td>
+                <td>{{ form.photo }}</td>
             </tr>
             <tr>
                 <td>{{ form.description.label }}</td>
@@ -53,10 +53,10 @@
                 data[$(this).attr('name')] = $(this).val()
             });
 
-        {# get the picture file name #}
-        let picture = $('#general_information #id_picture').get(0).files[0]
-        if (picture) {
-            data['picture'] = picture.name
+        {# get the photo file name #}
+        let photo = $('#general_information #id_photo').get(0).files[0]
+        if (photo) {
+            data['photo'] = photo.name
         }
         return data
     }

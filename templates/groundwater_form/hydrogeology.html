@@ -7,19 +7,19 @@
             </tr>
             {% field_as_row form.aquifer_name %}
             {% field_as_row form.aquifer_material %}
-            <tr>
-                <td><h4>Springs</h4></td>
-            </tr>
-            {% field_as_row form.average_yield %}
+            {% field_as_row form.aquifer_type %}
+            {% field_as_row form.thickness %}
+            {% field_as_row form.confinement %}
             <tr>
                 <td><h4>Well</h4></td>
             </tr>
-            {% field_as_row form.aquifer_type %}
+            {% field_as_row form.porosity %}
             {% field_as_row form.specific_capacity 'm<sup>2</sup>/day' %}
             {% field_as_row form.transmissivity 'm<sup>2</sup>/day' %}
-            {% field_as_row form.aquifer_thickness 'meter' %}
+            {% field_as_row form.hydraulic_conductivity %}
+            {% field_as_row form.specific_storage '%' %}
             {% field_as_row form.specific_yield '%' %}
-            {% field_as_row form.storativity %}
+            {% field_as_row form.test_type '%' %}
             </tr>
         </table>
     </div>

@@ -7,8 +7,6 @@
             </tr>
             {% field_as_row organisation.management_type %}
             {% field_as_row organisation.organisation %}
-            {% field_as_row organisation.owner %}
-            {% field_as_row organisation.responsible %}
             {% field_as_row organisation.description %}
             <tr>
                 <td><h4>Production</h4></td>
@@ -20,18 +18,18 @@
                 <td><h4>License</h4></td>
             </tr>
             {% field_as_row license.id %}
-            {% field_as_row license.validity_from %}
-            {% field_as_row license.validity_to %}
+            {% field_as_row license.valid_from %}
+            {% field_as_row license.valid_to %}
             {% field_as_row license.description %}
         </table>
     </div>
 </div>
 
 <script>
-    $('#management #id_validity_from').datepicker({
+    $('#management #id_valid_from').datepicker({
         format: 'DD-MM-YYYY',
     });
-    $('#management #id_validity_to').datepicker({
+    $('#management #id_valid_to').datepicker({
         format: 'DD-MM-YYYY',
     });
     submitFunctions['management'] = function () {

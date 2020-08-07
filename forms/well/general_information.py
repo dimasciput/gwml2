@@ -7,8 +7,8 @@ class GeneralInformationForm(forms.Form):
     """
     # identification
     id = forms.CharField()
-    water_point_reference = forms.CharField()
-    water_point_type = forms.CharField()
+    name = forms.CharField()
+    feature_type = forms.CharField()
 
     # Location Information
     latitude = forms.FloatField(help_text='latitude of well', min_value=-90, max_value=90)
@@ -20,5 +20,5 @@ class GeneralInformationForm(forms.Form):
     elevation = forms.CharField(help_text='elevation of well')
 
     # Summary Information
-    picture = forms.FileField(required=False)
+    photo = forms.FileField(required=False)
     description = forms.CharField(widget=forms.Textarea, required=False)

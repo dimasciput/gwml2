@@ -6,8 +6,7 @@ class GeologyLogForm(forms.Form):
     Form of geology log of well.
     """
     # identification
-    start_depth = forms.FloatField(required=False)
-    end_depth = forms.FloatField(required=False)
-    phenomenon_time = forms.DateTimeField(required=False)
-    result_time = forms.DateTimeField(required=False)
-    result = forms.CharField(required=False)
+    top_depth = forms.FloatField(required=False)
+    bottom_depth = forms.FloatField(required=False)
+    material = forms.CharField(required=False)
+    geology_unit = forms.CharField(required=False)

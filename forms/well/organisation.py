@@ -13,7 +13,5 @@ class OrganisationForm(forms.Form):
     management_type = forms.ChoiceField(
         choices=MANAGEMENT_TYPE,
         widget=forms.Select())
-    organisation = forms.CharField(required=False)
-    owner = forms.CharField(required=False)
-    responsible = forms.CharField(required=False)
+    organisation = forms.CharField(required=False, label='organisation/owner/responsible')
     description = forms.CharField(widget=forms.Textarea, required=False)

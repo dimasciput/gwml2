@@ -1,6 +1,11 @@
 from django import forms
 from gwml2.models.hydrogeological_unit.gw_aquifer import AquiferTypeTerm
 
+CONFINMENT_TYPE = (
+    ('CONFINMENT TYPE 1', 'CONFINMENT TYPE 1'),
+    ('CONFINMENT TYPE 2', 'CONFINMENT TYPE 2')
+)
+
 
 class HydrogeologyForm(forms.Form):
     """
@@ -12,13 +17,17 @@ class HydrogeologyForm(forms.Form):
     aquifer_type = forms.ModelChoiceField(
         queryset=AquiferTypeTerm.objects.all(),
         empty_label='------')
-    aquifer_thickness = forms.FloatField()
-
-    # Springs only
-    average_yield = forms.FloatField()
+    thickness = forms.FloatField()
+    confinement = forms.ChoiceField(
+        required=False,
+        choices=CONFINMENT_TYPE,
+        widget=forms.Select())
 
     # wells only
-    specific_capacity = forms.FloatField()
+    porosity = forms.FloatField()
+    hydraulic_conductivity = forms.FloatField()
     transmissivity = forms.FloatField()
+    specific_storage = forms.FloatField()
     specific_yield = forms.FloatField()
-    storativity = forms.FloatField()
+    specific_capacity = forms.FloatField()
+    test_type = forms.CharField()
